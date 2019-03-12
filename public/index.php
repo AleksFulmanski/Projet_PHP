@@ -18,4 +18,4 @@ $response = $app->handle($request);
 
 //renvoi de la reponse au navigateur
 
-\Http\Response\send($response);
+\Http\Response\send($response); 

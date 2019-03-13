@@ -27,7 +27,7 @@ class TrailingSlashMiddleware implements MiddlewareInterface
 		if($lastCharacter === '/'){
 			//determiner la nouvelle url
 			$newURL = substr($url, 0, -1);
-			var_dump($newURL);
+			
 
 		//rediriger
 		$response = new Response (301, [
@@ -39,7 +39,7 @@ class TrailingSlashMiddleware implements MiddlewareInterface
 		//sinon on appelle le middleware suivant
 		return $handler->handle($request);
 	}
-		var_dump($url);
+	
 		die('On est dans TrailingSlash Middleware');
 	}
 

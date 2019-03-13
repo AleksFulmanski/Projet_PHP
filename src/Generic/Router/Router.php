@@ -3,17 +3,19 @@
 namespace Generic\Router;
 
 use Zend\Expressive\Router\Route;
+use Psr\Http\Server\MiddlewareInterface;
 use Zend\Expressive\Router\FastRouteRouter;
+use Psr\Http\Message\ServerRequestInterface;
 
 
 class Router
-
 {
     /**
      * @var FastRouteRouter
      *
      */
     private $routerVendor;
+    
     public function __construct()
     {
         $this->routerVendor = new FastRouteRouter();
@@ -26,13 +28,13 @@ class Router
      * 
      */
 
-    public function addRoute (string $url, MiddlewareInterface $controller, ?string $name = null): void
+    public function addRoute(string $url, MiddlewareInterface $controller, ?string $name = null): void
     {
         //on crée un objet Route pour le passer au "vrai" router
         $route = new Route($url, $controller, null, $name);
 
         //on appelle la fonction du "vrai" router pour ajouter une route 
-        $this->routerVendor->addRoute();
+        $this->routerVendor->addRoute($route);
 
     }
     /**

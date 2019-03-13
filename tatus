@@ -1,0 +1,70 @@
+[33mcommit 1f50ea538d958389b17a26a43f396862daf272eb[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Aleksandra <a.fulmanski@gmail.com>
+Date:   Wed Mar 13 15:36:43 2019 +0100
+
+    Routage - Première version - /home fonctionnelle
+
+[33mcommit 37e2bc80b68a014d74e9a91a62e6d1a7cc9dabb7[m
+Author: Aleksandra <a.fulmanski@gmail.com>
+Date:   Wed Mar 13 13:29:17 2019 +0100
+
+    Router1
+
+[33mcommit 371b6cf2046f83d52b15f9ba4a3a8d78e699c58d[m
+Author: Aleksandra <a.fulmanski@gmail.com>
+Date:   Wed Mar 13 11:11:58 2019 +0100
+
+    TrailingSlash et appel des middlewares dynamique
+
+[33mcommit f81642daf09d56d393af1e5e9eb37f2fdae1ad94[m
+Author: Aleksandra <a.fulmanski@gmail.com>
+Date:   Tue Mar 12 17:09:16 2019 +0100
+
+    handler
+
+[33mcommit 0b20599e41cae216f310865fcd8e609e1239ca59[m
+Author: Aleksandra <a.fulmanski@gmail.com>
+Date:   Mon Mar 11 17:19:59 2019 +0100
+
+    Controllers
+
+[33mcommit 24ab3c3d6f829c9fcf256af2800fe0d1336b08e5[m
+Author: Aleksandra <a.fulmanski@gmail.com>
+Date:   Mon Mar 11 10:01:18 2019 +0100
+
+    Initialisation projet
+[33mcommit 1f50ea538d958389b17a26a43f396862daf272eb[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Aleksandra <a.fulmanski@gmail.com>
+Date:   Wed Mar 13 15:36:43 2019 +0100
+
+    Routage - Première version - /home fonctionnelle
+
+[33mcommit 37e2bc80b68a014d74e9a91a62e6d1a7cc9dabb7[m
+Author: Aleksandra <a.fulmanski@gmail.com>
+Date:   Wed Mar 13 13:29:17 2019 +0100
+
+    Router1
+
+[33mcommit 371b6cf2046f83d52b15f9ba4a3a8d78e699c58d[m
+Author: Aleksandra <a.fulmanski@gmail.com>
+Date:   Wed Mar 13 11:11:58 2019 +0100
+
+    TrailingSlash et appel des middlewares dynamique
+
+[33mcommit f81642daf09d56d393af1e5e9eb37f2fdae1ad94[m
+Author: Aleksandra <a.fulmanski@gmail.com>
+Date:   Tue Mar 12 17:09:16 2019 +0100
+
+    handler
+
+[33mcommit 0b20599e41cae216f310865fcd8e609e1239ca59[m
+Author: Aleksandra <a.fulmanski@gmail.com>
+Date:   Mon Mar 11 17:19:59 2019 +0100
+
+    Controllers
+
+[33mcommit 24ab3c3d6f829c9fcf256af2800fe0d1336b08e5[m
+Author: Aleksandra <a.fulmanski@gmail.com>
+Date:   Mon Mar 11 10:01:18 2019 +0100
+
+    Initialisation projet

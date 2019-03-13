@@ -5,6 +5,8 @@ use Generic\Router\Router;
 use GuzzleHttp\Psr7\ServerRequest;
 use Appli\Controller\HomeController;
 use Generic\Router\RouterMiddleware;
+use Appli\Controller\AboutController;
+use Appli\Controller\ContactController;
 use Generic\Middlewares\TrailingSlashMiddleware;
 
 
@@ -18,7 +20,10 @@ $request = ServerRequest::fromGlobals();
 //Ajout des routes dans le routeur
 
 $router = new Router(); 
+$router->addRoute('/', new HomeController(), 'homepage');
 $router->addRoute('/home', new HomeController(), 'homepage');
+$router->addRoute('/contact', new ContactController(), 'contact');
+$router->addRoute('/about', new AboutController(), 'about');
 
 
 //création de la response et il faut l'instancier

@@ -1,0 +1,21 @@
+{% extends 'base.twig' %}
+{% block body %}
+
+    <h1>{{ title }}</h1>
+    <p>Description : {{ products [0]["description"] }}</p>
+
+    {% if title == "Bonjour !" %}
+    <p>Bonjour</p>
+    {% elseif title == "Bonsoir !" %}
+    <p>Bonjour</p>
+    {% else %}
+    <p>Bonne nuit</p>
+    {% endif %}
+
+    {% for produitEnCours in products %}
+    <p>{{ produitEnCours['name'] }}</p>
+    {% endfor %} 
+
+{% endblock %}
+
+

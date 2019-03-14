@@ -2,6 +2,7 @@
 
 use Generic\App;
 use Generic\Router\Router;
+use Generic\Renderer\TwigRenderer;
 use GuzzleHttp\Psr7\ServerRequest;
 use Appli\Controller\HomeController;
 use Generic\Router\RouterMiddleware;
@@ -10,20 +11,30 @@ use Appli\Controller\ContactController;
 use Generic\Middlewares\TrailingSlashMiddleware;
 
 
+
+$rootDir = dirname(__DIR__); 
+
 // chargement de l'autoloader
 //dirname pour remonter dans le dossier et puis redescendre chercher le dossier vendor
-require_once dirname(__DIR__) . '/vendor/autoload.php';
+require_once $rootDir . '/vendor/autoload.php';
 
 //création de la requete
 $request = ServerRequest::fromGlobals();
 
+// Initialiser Twig
+
+$twig = new TwigRenderer($rootDir . '/templates');
+
 //Ajout des routes dans le routeur
+//inserer les $twig dans les controllers () c'est la fonction construct donc dans la mrer controller 
+//il faut créer une fonction construct
 
 $router = new Router(); 
-$router->addRoute('/', new HomeController(), 'homepage');
-$router->addRoute('/home', new HomeController(), 'homepage');
-$router->addRoute('/contact', new ContactController(), 'contact');
-$router->addRoute('/about', new AboutController(), 'about');
+$router->addRoute('/', new HomeController($twig), 'homepage');
+$router->addRoute('/home', new HomeController($twig), 'homepage');
+$router->addRoute('/contact', new ContactController($twig), 'contact');
+$router->addRoute('/about', new AboutController($twig), 'about');
+
 
 
 //création de la response et il faut l'instancier

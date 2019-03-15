@@ -42,6 +42,7 @@ $router->addRoute('/about', $container->get(AboutController::class), 'about');
 
 
 
+
 //création de la response et il faut l'instancier
 //quand on crée la classe App, on rappelle la méthode
 $app = new App([

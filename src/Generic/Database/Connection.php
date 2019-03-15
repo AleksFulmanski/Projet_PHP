@@ -1,5 +1,5 @@
 <?php
-namespace Generic\Connection;
+namespace Generic\Database;
 
 /**
  * Class Connection
@@ -12,13 +12,11 @@ class Connection
      * @var \PDO
      */
     private $pdo;
-    public function __construct()
+    public function __construct(string $databaseName, string $databaseUser, $databasePass)
     {
         // Infos nécessaires
-        $dsn = 'mysql:host=localhost;dbname=bdd_mysql_command';
-        $user = 'php_user_bdd';
-        $pass = 'rjqwhMYlhNXmVOPc';
-        $this->connect($dsn, $user, $pass);
+        $dsn = 'mysql:host=localhost;dbname=' .$databaseName ;
+        $this->connect($dsn, $databaseUser, $databasePass);
     }
     /**
      * Etablit une connexion avec la base de données

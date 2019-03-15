@@ -1,4 +1,4 @@
-<?php  
+<?php
 namespace Generic\Middlewares;
 
 use GuzzleHttp\Psr7\Response;
@@ -10,38 +10,36 @@ use Psr\Http\Server\RequestHandlerInterface;
 class TrailingSlashMiddleware implements MiddlewareInterface
 {
 
-	public function process(
-		ServerRequestInterface $request, RequestHandlerInterface $handler
-		): ResponseInterface {
+    public function process(
+        ServerRequestInterface $request,
+        RequestHandlerInterface $handler
+    ): ResponseInterface {
 
-		//trouver l'url
-		$url = $request->getUri()->getPath();
+        //trouver l'url
+        $url = $request->getUri()->getPath();
 
-		//determiner le dernier caractère de l'url avec substr
+        //determiner le dernier caractère de l'url avec substr
 
-		$lastCharacter = substr($url, -1);
-		//$lastCharacter = $url[-1];
-		// ou la syntaxe : $lastCharacter = $url[-1];
+        $lastCharacter = substr($url, -1);
+        //$lastCharacter = $url[-1];
+        // ou la syntaxe : $lastCharacter = $url[-1];
 
-		//si le dernier caractère est un slash ("/")
-		if($lastCharacter === '/' && strlen($url) !== 1) {
-			//determiner la nouvelle url
-			$newURL = substr($url, 0, -1);
-			
+        //si le dernier caractère est un slash ("/")
+        if ($lastCharacter === '/' && strlen($url) !== 1) {
+            //determiner la nouvelle url
+            $newURL = substr($url, 0, -1);
+            
 
-		//rediriger
-		$response = new Response (301, [
-			'location' => $newURL
-		]);
-		return $response;
-
-	} else {
-		//sinon on appelle le middleware suivant
-		return $handler->handle($request);
-	}
-	
-		die('On est dans TrailingSlash Middleware');
-	}
-
+        //rediriger
+            $response = new Response(301, [
+            'location' => $newURL
+            ]);
+            return $response;
+        } else {
+            //sinon on appelle le middleware suivant
+            return $handler->handle($request);
+        }
+    
+        die('On est dans TrailingSlash Middleware');
+    }
 }
-

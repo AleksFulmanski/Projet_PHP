@@ -7,9 +7,9 @@ use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 
-
 class RouterMiddleware implements MiddlewareInterface
-{  
+{
+
 
     private $router;
 
@@ -28,7 +28,7 @@ class RouterMiddleware implements MiddlewareInterface
     *
     * @return ResponseInterface
     */
-    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler) : ResponseInterface 
+    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler) : ResponseInterface
     {
         //recupération de l'eventuel controleur
         $controller = $this->router->match($request);
@@ -37,9 +37,9 @@ class RouterMiddleware implements MiddlewareInterface
         if (!is_null($controller)) {
             $response = $controller->process($request, $handler);
         } else {
-        //s'il n'y a pas de controller => on renvoit une page 404  
+        //s'il n'y a pas de controller => on renvoit une page 404
             $response = new Response(404, [], '<h1>Erreur 404 : Page introuvable</h1>');
-        } 
+        }
         return $response;
     }
 }

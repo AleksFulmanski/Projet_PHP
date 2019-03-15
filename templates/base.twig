@@ -28,10 +28,7 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catégories</a>
           <div class="dropdown-menu" aria-labelledby="dropdown07">
-            <?php foreach($categories as $cat) : ?>
-                <a class="dropdown-item" href="#"><?= $cat['name'] ?></a>
-            <?php endforeach; ?>
-            
+                      
           </div>
         </li>
       </ul>
@@ -41,7 +38,7 @@
     </div>
   </div>
 </nav>
-    {% endblock %}
+    {% endblock navbar %}
 
 <main class="container">
     {% block body %} {% endblock %}
